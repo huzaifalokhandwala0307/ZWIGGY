@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZWIGGY</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Zwiggy</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#" class="nav-support">Support</a></li>
+        </ul>
+    </nav>
+    <div class="headinfo">
+        <h1>
+           ZWIGGY
+        </h1>
+
+        <h6>
+            Smarter predictions for unpredictable cities.
+        </h6>
+
+        <h3>
+            App that predicts your delivery time based on your order
+        </h3>
+    </div>
+
+    <div class="forminput">
+        <form action="/predict" method="post" class="delivery-form">
+
+            <label for="city" class="form-label">City:</label>
+            <select name="city" id="city" class="dropdown city-dropdown">
+                <option value="">-- Select City --</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="delhi">Delhi</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="chennai">Chennai</option>
+            </select>
+
+
+            <label for="restaurant" class="form-label">Restaurant:</label>
+            <select name="restaurant" id="restaurant" class="dropdown restaurant-dropdown">
+                <option value="">-- Select Restaurant --</option>
+                <option value="dominos">Dominos</option>
+                <option value="kfc">KFC</option>
+                <option value="mcdonalds">McDonalds</option>
+                <option value="subway">Subway</option>
+                <option value="local_cafe">Local Cafe</option>
+            </select>
+
+
+            <label for="distance" class="form-label">Distance (km):</label>
+           <input type="number" name="distance" id="distance" step="0.01" class="input distance-input" required>
+
+
+            <label for="items" class="form-label">Number of Items:</label>
+            <input type="number" name="items" id="items" class="input items-input">
+
+
+            <label for="peak" class="form-label">Peak Hour:</label>
+            <select name="peak" id="peak" class="dropdown peak-dropdown">
+                <option value="">-- Select Peak Hour --</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+
+            <label for="traffic" class="form-label">Traffic Level:</label>
+            <select name="traffic" id="traffic" class="dropdown traffic-dropdown">
+                <option value="">-- Select Traffic Level --</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+
+            <label for="weather" class="form-label">Weather:</label>
+            <select name="weather" id="weather" class="dropdown weather-dropdown">
+                <option value="">-- Select Weather --</option>
+                <option value="clear">Clear</option>
+                <option value="rainy">Rainy</option>
+                <option value="foggy">Foggy</option>
+            </select>
+
+
+            <label for="priority" class="form-label">Priority:</label>
+            <select name="priority" id="priority" class="dropdown priority-dropdown">
+                <option value="">-- Select Priority --</option>
+                <option value="normal">Normal</option>
+                <option value="fast">Fast</option>
+            </select>
+
+
+            <button type="submit" class="submit-btn">Predict</button>
+
+        </form>
+    </div>
+
+    <div class="prediction">
+        <h3>Preparation Time: {{prep}}</h3>
+        <h3>Estimated Delivery Time: {{time}}</h3>
+        <h3>Delay Reason: {{reason}}</h3>
+        
+        <!-- Accuracy Score Box -->
+        <div class="accuracy-box">
+                <p>📊 Overall Model Accuracy: {{accuracy}}%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Zwiggy | Developed by <strong>HUZAIFA LOKHANDWALA</strong></p>
+    </footer>
+
+</body>
+</html>
