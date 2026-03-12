@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwiggy — Support</title>
+    <link rel="stylesheet" href="/static/support.css">
+</head>
+<body>
+
+    <!-- ── Navbar ── -->
+    <nav class="navbar">
+        <a href="base.html" class="navbar-brand">Zwiggy</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/index" class="nav-cta">Predict Delivery Time</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── Support Header ── -->
+    <header class="supporthead">
+        <p class="support-label">24 / 7 Help Center</p>
+        <h2 class="support-title">Welcome to Zwiggy Support</h2>
+        <p class="support-sub">Please say out your issue and our assistant will help you instantly.</p>
+    </header>
+
+    <!-- ── Chat Box ── -->
+    <main class="chat-wrapper">
+
+        <div class="chat-box" id="chatBox">
+
+            <!-- Bot greeting -->
+            <div class="message bot-message">
+                <span class="avatar">🛵</span>
+                <div class="bubble">
+                    Hey! I'm Zwiggy's support assistant. How can I help you today?
+                </div>
+            </div>
+
+            <!-- Flask injects user + bot messages here -->
+            {% if user_msg %}
+            <div class="message user-message">
+                <span class="avatar">You</span>
+                <div class="bubble">{{ user_msg }}</div>
+            </div>
+            {% endif %}
+
+            {% if bot_reply %}
+            <div class="message bot-message">
+                <span class="avatar">🛵</span>
+                <div class="bubble">{{ bot_reply }}</div>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <!-- Input Form -->
+        <form class="chat-form" action="/support" method="post">
+            <label for="userInput" class="sr-only">You:</label>
+            <input
+                type="text"
+                name="user_input"
+                id="userInput"
+                class="chat-input"
+                placeholder="Type your issue here..."
+                autocomplete="off"
+                required
+            >
+            <button type="submit" class="chat-send-btn">
+                Send <span class="btn-icon">→</span>
+            </button>
+        </form>
+
+    </main>
+
+    <!-- ── Quick Help Chips ── -->
+    <section class="quick-help">
+        <p class="quick-label">Common Issues</p>
+        <div class="chips">
+            <button class="chip">Where is my order?</button>
+            <button class="chip">Cancel my order</button>
+            <button class="chip">Wrong order delivered</button>
+            <button class="chip">Refund status</button>
+            <button class="chip">Payment failed</button>
+            <button class="chip">Promo code not working</button>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <p>© 2025 Zwiggy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

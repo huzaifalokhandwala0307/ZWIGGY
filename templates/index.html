@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZWIGGY</title>
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <nav class="navbar">
-        <a href="#" class="navbar-brand">Zwiggy</a>
+        <a href="base.html" class="navbar-brand">Zwiggy</a>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Track Order</a></li>
-            <li><a href="#" class="nav-support">Support</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/index" class="nav-cta">Predict Delivery Time</a></li>
         </ul>
     </nav>
     <div class="headinfo">
