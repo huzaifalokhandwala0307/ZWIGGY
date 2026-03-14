@@ -113,7 +113,7 @@ Zwiggy/
 ## ⚙️ Installation
 
 ### 1️⃣ Clone the repository
-git clone https://github.com/yourusername/zwiggy.git
+git clone https://github.com/huzaifalokhandwala0307/ZWIGGY.git 
 cd zwiggy
 2️⃣ Install dependencies
 pip install -r Requirement.txt
