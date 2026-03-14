@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwiggy — McDonald's</title>
+    <link rel="stylesheet" href="/static/mcdonald.css">
+</head>
+<body>
+
+    <!-- ── Navbar ── -->
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">Zwiggy</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict-page">Predict Time</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── Restaurant Header ── -->
+    <header class="restaurant-head">
+        <div class="restaurant-info">
+            <img src="/static/mcdonalds.svg" alt="McDonalds Logo" class="restaurant-logo">
+            <div class="restaurant-details">
+                <p class="restaurant-meta">Burgers · Fast Food · American</p>
+                <h1 class="restaurant-name">McDonald's</h1>
+                <p class="restaurant-sub">I'm lovin' it — burgers, fries & more delivered fresh.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Menu ── -->
+    <main class="menu-wrapper">
+
+        <!-- ── Burgers ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🍔 Burgers</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="McAloo Tikki" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">McAloo Tikki</p>
+                        <p class="menu-desc">Spiced potato patty, lettuce & sauce in a toasted bun</p>
+                        <p class="menu-price">₹99</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="McSpicy Paneer" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">McSpicy Paneer</p>
+                        <p class="menu-desc">Crispy spicy paneer patty with creamy sauce & lettuce</p>
+                        <p class="menu-price">₹179</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="McSpicy Chicken" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">McSpicy Chicken</p>
+                        <p class="menu-desc">Fiery crispy chicken fillet with habanero sauce</p>
+                        <p class="menu-price">₹199</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Big Mac" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Big Mac</p>
+                        <p class="menu-desc">Double beef patty, special sauce, lettuce, cheese & pickles</p>
+                        <p class="menu-price">₹249</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Maharaja Mac" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Maharaja Mac</p>
+                        <p class="menu-desc">Double chicken patty with special masala sauce</p>
+                        <p class="menu-price">₹269</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Chicken Fillet Burger" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Chicken Fillet Burger</p>
+                        <p class="menu-desc">Juicy chicken fillet with mayo, lettuce & tomato</p>
+                        <p class="menu-price">₹159</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Fries & Sides ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🍟 Fries & Sides</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595456.png" alt="Small Fries" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Small Fries</p>
+                        <p class="menu-desc">Golden crispy fries — lightly salted & perfectly cooked</p>
+                        <p class="menu-price">₹79</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595456.png" alt="Medium Fries" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Medium Fries</p>
+                        <p class="menu-desc">Classic McD fries — medium size with ketchup dip</p>
+                        <p class="menu-price">₹109</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595456.png" alt="Large Fries" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Large Fries</p>
+                        <p class="menu-desc">Extra large golden fries — go big or go home</p>
+                        <p class="menu-price">₹139</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595456.png" alt="Piri Piri Fries" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Piri Piri Fries</p>
+                        <p class="menu-desc">Crispy fries tossed in spicy piri piri seasoning</p>
+                        <p class="menu-price">₹129</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── McFlurry & Desserts ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🍦 McFlurry & Desserts</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/938/938063.png" alt="McFlurry Oreo" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">McFlurry Oreo</p>
+                        <p class="menu-desc">Creamy vanilla soft serve blended with Oreo crumbles</p>
+                        <p class="menu-price">₹129</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/938/938063.png" alt="McFlurry KitKat" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">McFlurry KitKat</p>
+                        <p class="menu-desc">Soft serve with crunchy KitKat pieces & chocolate sauce</p>
+                        <p class="menu-price">₹139</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/938/938063.png" alt="Soft Serve Cone" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Soft Serve Cone</p>
+                        <p class="menu-desc">Classic vanilla soft serve in a crispy cone</p>
+                        <p class="menu-price">₹49</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/938/938063.png" alt="Chocolate Pie" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Chocolate Pie</p>
+                        <p class="menu-desc">Warm flaky pastry filled with rich chocolate cream</p>
+                        <p class="menu-price">₹59</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Drinks ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🥤 Drinks & Shakes</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Coke" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Coca-Cola</p>
+                        <p class="menu-desc">Chilled classic Coke — 500ml</p>
+                        <p class="menu-price">₹65</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Chocolate Shake" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Chocolate Shake</p>
+                        <p class="menu-desc">Thick creamy chocolate milkshake — 300ml</p>
+                        <p class="menu-price">₹119</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Strawberry Shake" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Strawberry Shake</p>
+                        <p class="menu-desc">Sweet strawberry milkshake — 300ml</p>
+                        <p class="menu-price">₹119</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Sprite" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Sprite</p>
+                        <p class="menu-desc">Refreshing lemon-lime soda — 500ml</p>
+                        <p class="menu-price">₹65</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <p>© 2025 Zwiggy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

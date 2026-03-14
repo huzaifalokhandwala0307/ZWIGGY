@@ -1,190 +1,232 @@
-# 🚚 Delivery Time Prediction ML Web App
+# 🍔 Zwiggy – Smart Food Delivery Prediction App
 
-A Machine Learning web application that predicts **food delivery time**, **restaurant preparation time**, and **possible delay reasons** using order details such as city, distance, traffic, weather, and peak hour conditions.
-
-This project is built using **Python, Flask, and Scikit-Learn** and provides a simple web interface where users can enter order information and get delivery predictions.
-
----
-
-# 📌 Features
-
-✔ Predict delivery time  
-✔ Predict restaurant preparation time  
-✔ Identify possible delay reasons  
-✔ Machine learning pipeline using Scikit-Learn  
-✔ Web interface using HTML & CSS  
-✔ Synthetic dataset generation for training  
-✔ Model evaluation with regression and classification metrics  
+Zwiggy is a **Flask-based web application** that predicts food delivery time using **Machine Learning**.  
+The app simulates a modern food delivery platform where users can browse restaurants, predict delivery time, and get support through a chatbot.
 
 ---
 
-# 🧠 Machine Learning Models
+## 🚀 Features
 
-This project uses **three machine learning models**.
+- 🧠 **Machine Learning Delivery Prediction**
+  - Predicts delivery time based on:
+    - City
+    - Restaurant
+    - Distance
+    - Number of items
+    - Traffic level
+    - Weather conditions
+    - Peak hour
 
-## 1️⃣ Preparation Time Model
-Predicts how long a restaurant will take to prepare the order.
+- 🍽 **Restaurant Selection**
+  - Choose from restaurants like:
+    - Dominos
+    - KFC
+    - McDonald's
+    - Subway
+    - Local Cafe
 
-**Input**
-- Restaurant name
+- 🤖 **Customer Support Chatbot**
+  - AI-based chatbot to assist users with common delivery queries.
 
-**Model Used**
-- Linear Regression
+- 🌐 **Multi-Page Web Application**
+  - Home page
+  - Restaurant pages
+  - Delivery prediction page
+  - Customer support page
 
----
-
-## 2️⃣ Delivery Time Model
-Predicts the estimated delivery time using multiple factors.
-
-**Inputs**
-- City
-- Distance (km)
-- Number of items
-- Peak hour
-- Traffic level
-- Weather
-- Restaurant
-- Preparation time
-
-**Model Used**
-- Linear Regression
-
----
-
-## 3️⃣ Delay Reason Model
-Predicts the possible reason for delay.
-
-Possible predictions:
-- Traffic
-- Weather
-- Restaurant Delay
-- Rider Availability
-- No Delay
-
-**Model Used**
-- Decision Tree Classifier
+- 🎨 **Modern UI**
+  - Swiggy-inspired design
+  - Responsive layout
+  - Clean restaurant cards
 
 ---
 
-# ⚙️ Tech Stack
+## 🧠 Machine Learning Models Used
 
-### Backend
+| Model | Purpose |
+|------|--------|
+| Linear Regression | Predict delivery time |
+| Decision Tree Classifier | Predict delay reason |
+| NLP Model | Chatbot intent classification |
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript (planned)
+
+**Backend**
 - Python
 - Flask
 
-### Machine Learning
-- Scikit-Learn
+**Machine Learning**
+- Scikit-learn
 - Pandas
 - NumPy
 
-### Frontend
-- HTML
-- CSS
-
-### Visualization
-- Matplotlib
-
-### Model Storage
+**Model Storage**
 - Joblib
 
 ---
 
-# 📊 Model Evaluation
-
-### Regression Metrics
-- Mean Squared Error (MSE)
-- Root Mean Squared Error (RMSE)
-- Mean Absolute Error (MAE)
-- R² Score
-
-### Classification Metrics
-- Accuracy Score
-- Confusion Matrix
-- Classification Report
-
----
-
-# 📂 Project Structure
+## 📂 Project Structure
 
 
-project
+Zwiggy/
 │
-├── static
-│ └── style.css
+├── static/
+│ ├── base.css
+│ ├── dominos.css
+│ ├── kfc.css
+│ ├── subway.css
+│ ├── localcafe.css
+│ ├── mcdonalds.svg
+│ ├── subway.svg
 │
-├── templates
-│ └── index.html
+├── templates/
+│ ├── base.html
+│ ├── index.html
+│ ├── support.html
+│ ├── dominos.html
+│ ├── kfc.html
+│ ├── mcdonald.html
+│ ├── subway.html
+│ ├── localcafe.html
 │
 ├── app.py
+├── predict_time.py
+├── chatbotsupport.py
+│
 ├── delivery_time_model.joblib
 ├── delay_reason_model.joblib
 ├── prep_time_model.joblib
-├── metrics.json
-├── requirements.txt
+│
+├── Requirement.txt
 └── README.md
 
 
 ---
 
-# 🚀 How to Run the Project
+## ⚙️ Installation
 
-## 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/yourusername/delivery-time-prediction-ml-app.git
-2️⃣ Go to the project directory
-cd delivery-time-prediction-ml-app
-3️⃣ Install required packages
-pip install -r requirements.txt
-4️⃣ Run the Flask application
+### 1️⃣ Clone the repository
+git clone https://github.com/yourusername/zwiggy.git
+cd zwiggy
+2️⃣ Install dependencies
+pip install -r Requirement.txt
+3️⃣ Run the application
 python app.py
-5️⃣ Open the web app
-
-Open your browser and go to:
-
+4️⃣ Open in browser
 http://127.0.0.1:5000
-🖥️ Web Application
+📊 Example Prediction
 
-The user provides the following inputs:
+Input parameters:
 
-City
+City: Bangalore
 
-Restaurant
+Restaurant: Dominos
 
-Distance
+Distance: 5 km
 
-Number of items
+Items: 3
 
-Peak hour
+Traffic: Medium
 
-Traffic level
+Weather: Clear
 
-Weather
+Output:
 
-Priority
+Preparation Time: 18 minutes
+Estimated Delivery Time: 42 minutes
+Delay Reason: No Delay
+🔮 Future Improvements
 
-The system predicts:
+🛒 Add cart and ordering system
 
-🍳 Preparation Time
-🕒 Estimated Delivery Time
-⚠️ Possible Delay Reason
+📍 Integrate map-based distance calculation
 
-📈 Future Improvements
+📦 Real-time order tracking simulation
 
-Use real food delivery datasets
+💳 Payment integration
 
-Add advanced ML models
+🗄 Database integration (SQLite / PostgreSQL)
 
-Deploy the application online
-
-Add map-based distance calculation
-
-Integrate real-time traffic API
-
-Improve UI design
+📱 Fully responsive mobile UI
 
 👨‍💻 Author
 
 Huzaifa
 
-Machine Learning & AI Enthusiast
+Machine Learning & Web Development Enthusiast
+
+⭐ Project Status
+
+🚧 In Development
+New features such as JavaScript interactivity and database integration will be added soon.
+
+📜 License
+
+This project is open source and available under the MIT License.
+
+
+---
+
+✅ This README will make your **GitHub project look professional**.
+
+If you want, I can also give you a **better GitHub project title + description + tags** so your repo looks even stronger.
+
+This project is open source and available under the **MIT License**.
+
+whats this
+
+That line in the README:
+
+“This project is open source and available under the MIT License.”
+
+means people are allowed to use your project code under certain rules.
+
+📜 What an MIT License Means
+
+The MIT License is a very simple open-source license.
+
+If you publish your project with it, others can:
+
+✅ Use your code
+✅ Modify your code
+✅ Share your code
+✅ Use it in their own projects (even commercial ones)
+
+But they must:
+
+Keep your copyright notice
+
+Mention the MIT license
+
+Example
+
+Someone could take your Zwiggy project, improve it, and build a bigger app from it — but they must still mention you as the original author.
+
+Do you actually need it?
+
+For college / portfolio projects, it's optional.
+
+You have 3 choices:
+
+1️⃣ MIT License (most common for GitHub projects)
+2️⃣ No license – people technically cannot reuse your code
+3️⃣ Private repo – only you see it
+
+If you want to use MIT License
+
+Create a file called:
+
+LICENSE
+
+Then add:
+
+MIT License
+
+Copyright (c) 2026 Huzaifa

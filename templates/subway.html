@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwiggy — Subway</title>
+    <link rel="stylesheet" href="/static/subway.css">
+</head>
+<body>
+
+    <!-- ── Navbar ── -->
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">Zwiggy</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict-page">Predict Time</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── Restaurant Header ── -->
+    <header class="restaurant-head">
+        <div class="restaurant-info">
+            <img src="/static/subway.svg" alt="Subway Logo" class="restaurant-logo">
+            <div class="restaurant-details">
+                <p class="restaurant-meta">Sandwiches · Healthy · Fresh</p>
+                <h1 class="restaurant-name">Subway</h1>
+                <p class="restaurant-sub">Eat Fresh — custom subs, wraps & salads made just for you.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Menu ── -->
+    <main class="menu-wrapper">
+
+        <!-- ── Subs / Sandwiches ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🥖 Subs & Sandwiches</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Veggie Delite" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Veggie Delite</p>
+                        <p class="menu-desc">Fresh veggies, lettuce, tomato & your choice of sauce</p>
+                        <p class="menu-price">₹199</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Chicken Teriyaki" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Chicken Teriyaki</p>
+                        <p class="menu-desc">Sweet teriyaki glazed chicken strips with fresh greens</p>
+                        <p class="menu-price">₹299</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Italian BMT" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Italian BMT</p>
+                        <p class="menu-desc">Pepperoni, salami & ham with olives & jalapeños</p>
+                        <p class="menu-price">₹329</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Spicy Italian" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Spicy Italian</p>
+                        <p class="menu-desc">Double pepperoni & salami with chipotle southwest sauce</p>
+                        <p class="menu-price">₹319</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Tuna Sub" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Tuna Sub</p>
+                        <p class="menu-desc">Creamy tuna salad with cucumber, onion & tomato</p>
+                        <p class="menu-price">₹289</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Paneer Tikka" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Paneer Tikka</p>
+                        <p class="menu-desc">Spiced tandoori paneer with mint chutney & veggies</p>
+                        <p class="menu-price">₹279</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Wraps ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🌯 Wraps</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Chicken Caesar Wrap" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Chicken Caesar Wrap</p>
+                        <p class="menu-desc">Grilled chicken, romaine lettuce & caesar dressing</p>
+                        <p class="menu-price">₹289</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Veggie Wrap" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Veggie Wrap</p>
+                        <p class="menu-desc">Crispy veggies, hummus & sweet onion sauce in a flour wrap</p>
+                        <p class="menu-price">₹229</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="BBQ Chicken Wrap" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">BBQ Chicken Wrap</p>
+                        <p class="menu-desc">Smoky BBQ chicken with caramelised onions & cheese</p>
+                        <p class="menu-price">₹299</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Egg & Cheese Wrap" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Egg & Cheese Wrap</p>
+                        <p class="menu-desc">Scrambled eggs, cheddar cheese & fresh spinach</p>
+                        <p class="menu-price">₹249</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Salads ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🥗 Salads</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Garden Fresh Salad" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Garden Fresh Salad</p>
+                        <p class="menu-desc">Lettuce, tomato, cucumber, capsicum & olives</p>
+                        <p class="menu-price">₹179</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Chicken Salad Bowl" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Chicken Salad Bowl</p>
+                        <p class="menu-desc">Grilled chicken on a bed of fresh greens & vinaigrette</p>
+                        <p class="menu-price">₹259</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Tuna Salad Bowl" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Tuna Salad Bowl</p>
+                        <p class="menu-desc">Creamy tuna with mixed greens, corn & red onion</p>
+                        <p class="menu-price">₹249</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Cookies & Sides ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🍪 Cookies & Sides</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/541/541732.png" alt="Chocolate Chip Cookie" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Choco Chip Cookie</p>
+                        <p class="menu-desc">Freshly baked soft cookie loaded with chocolate chips</p>
+                        <p class="menu-price">₹59</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/541/541732.png" alt="Double Chocolate Cookie" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Double Choco Cookie</p>
+                        <p class="menu-desc">Rich double chocolate fudge cookie — baked fresh daily</p>
+                        <p class="menu-price">₹65</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/541/541732.png" alt="Oatmeal Raisin Cookie" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Oatmeal Raisin Cookie</p>
+                        <p class="menu-desc">Wholesome oat cookie with plump raisins & cinnamon</p>
+                        <p class="menu-price">₹59</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/541/541732.png" alt="Hash Browns" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Hash Browns</p>
+                        <p class="menu-desc">Crispy golden hash browns — perfect side snack</p>
+                        <p class="menu-price">₹79</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Drinks ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🥤 Drinks</h2>
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Coke" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Coca-Cola</p>
+                        <p class="menu-desc">Chilled classic Coke — 500ml</p>
+                        <p class="menu-price">₹65</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Minute Maid" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Minute Maid Pulpy Orange</p>
+                        <p class="menu-desc">Fresh orange juice with real pulp — 400ml</p>
+                        <p class="menu-price">₹69</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Lemonade" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Fresh Lemonade</p>
+                        <p class="menu-desc">Freshly squeezed lemonade with mint & basil</p>
+                        <p class="menu-price">₹59</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Water" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Mineral Water</p>
+                        <p class="menu-desc">Chilled 500ml water bottle</p>
+                        <p class="menu-price">₹30</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <p>© 2025 Zwiggy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

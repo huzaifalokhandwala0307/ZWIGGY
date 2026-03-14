@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwiggy — Dominos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dominos.css') }}">
+</head>
+<body>
+
+    <!-- ── Navbar ── -->
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">Zwiggy</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/predict-page" class="nav-cta">Predict Delivery Time</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── Restaurant Header ── -->
+    <header class="restaurant-head">
+        <div class="restaurant-info">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Dominos_pizza_logo.svg" alt="Dominos Logo" class="restaurant-logo">
+            <div class="restaurant-details">
+                <h1 class="restaurant-name">Domino's Pizza</h1>
+                <p class="restaurant-meta">Pizza · Fast Food · American</p>
+                <p class="restaurant-sub">Hot & fresh pizza, delivered to your door.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Menu ── -->
+    <main class="menu-wrapper">
+
+        <!-- ── Pizzas ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🍕 Pizzas</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Margherita Pizza" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Margherita</p>
+                        <p class="menu-desc">Classic tomato base with mozzarella & fresh herbs</p>
+                        <p class="menu-price">₹199</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Pepperoni Pizza" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Pepperoni Feast</p>
+                        <p class="menu-desc">Loaded with double pepperoni on rich tomato sauce</p>
+                        <p class="menu-price">₹349</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="BBQ Chicken Pizza" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">BBQ Chicken</p>
+                        <p class="menu-desc">Smoky BBQ sauce, grilled chicken & caramelised onions</p>
+                        <p class="menu-price">₹379</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Veggie Supreme Pizza" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Veggie Supreme</p>
+                        <p class="menu-desc">Capsicum, olives, mushrooms, onions & sweet corn</p>
+                        <p class="menu-price">₹299</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Paneer Makhani Pizza" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Paneer Makhani</p>
+                        <p class="menu-desc">Creamy makhani sauce with tandoori paneer chunks</p>
+                        <p class="menu-price">₹329</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Chicken Fiesta Pizza" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Chicken Fiesta</p>
+                        <p class="menu-desc">Spicy chicken sausage, jalapeños & bell peppers</p>
+                        <p class="menu-price">₹359</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Four Cheese Pizza" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Four Cheese</p>
+                        <p class="menu-desc">Mozzarella, cheddar, gouda & parmesan blend</p>
+                        <p class="menu-price">₹399</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Farmhouse Pizza" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Farmhouse</p>
+                        <p class="menu-desc">Fresh tomatoes, capsicum, mushrooms & golden corn</p>
+                        <p class="menu-price">₹279</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Garlic Bread ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🥖 Garlic Bread</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Classic Garlic Bread" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Classic Garlic Bread</p>
+                        <p class="menu-desc">Toasted bread with butter & garlic seasoning</p>
+                        <p class="menu-price">₹99</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Cheesy Garlic Bread" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Cheesy Garlic Bread</p>
+                        <p class="menu-desc">Garlic bread loaded with stretchy mozzarella</p>
+                        <p class="menu-price">₹149</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Stuffed Garlic Bread" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Stuffed Garlic Bread</p>
+                        <p class="menu-desc">Filled with cheese, jalapeños & corn stuffing</p>
+                        <p class="menu-price">₹179</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Herbed Garlic Bread" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Herbed Garlic Bread</p>
+                        <p class="menu-desc">Italian herbs, olive oil drizzle & roasted garlic</p>
+                        <p class="menu-price">₹119</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Drinks ── -->
+        <section class="menu-section">
+            <h2 class="menu-section-title">🥤 Drinks & Coke</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Coke" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Coca-Cola</p>
+                        <p class="menu-desc">Classic chilled Coke — 500ml</p>
+                        <p class="menu-price">₹65</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Pepsi" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Pepsi</p>
+                        <p class="menu-desc">Ice cold Pepsi — 500ml</p>
+                        <p class="menu-price">₹65</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Sprite" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Sprite</p>
+                        <p class="menu-desc">Refreshing lemon-lime soda — 500ml</p>
+                        <p class="menu-price">₹65</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Nimbu Paani" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Nimbu Paani</p>
+                        <p class="menu-desc">Fresh squeezed lemonade with mint</p>
+                        <p class="menu-price">₹49</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Mango Juice" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Mango Slice</p>
+                        <p class="menu-desc">Chilled mango drink — 250ml</p>
+                        <p class="menu-price">₹45</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Water Bottle" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Mineral Water</p>
+                        <p class="menu-desc">Chilled 500ml water bottle</p>
+                        <p class="menu-price">₹30</p>
+                        <button class="add-btn">Add +</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <p>© 2025 Zwiggy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
