@@ -1,100 +1,119 @@
 # 🍔 Zwiggy – Smart Food Delivery Prediction App
 
-Zwiggy is a **Flask-based web application** that predicts food delivery time using **Machine Learning**.  
-The app simulates a modern food delivery platform where users can browse restaurants, predict delivery time, and get support through a chatbot.
+Zwiggy is a **Flask-based web application** that predicts food delivery time using **Machine Learning**.
+The application simulates a modern food delivery platform where users can browse restaurants, estimate delivery time, and get assistance through a chatbot.
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
-- 🧠 **Machine Learning Delivery Prediction**
-  - Predicts delivery time based on:
-    - City
-    - Restaurant
-    - Distance
-    - Number of items
-    - Traffic level
-    - Weather conditions
-    - Peak hour
+### 🧠 Machine Learning Delivery Prediction
 
-- 🍽 **Restaurant Selection**
-  - Choose from restaurants like:
-    - Dominos
-    - KFC
-    - McDonald's
-    - Subway
-    - Local Cafe
+Predict delivery time based on:
 
-- 🤖 **Customer Support Chatbot**
-  - AI-based chatbot to assist users with common delivery queries.
+* City
+* Restaurant
+* Distance
+* Number of items
+* Traffic level
+* Weather conditions
+* Peak hour
 
-- 🌐 **Multi-Page Web Application**
-  - Home page
-  - Restaurant pages
-  - Delivery prediction page
-  - Customer support page
+### 🍽 Restaurant Selection
 
-- 🎨 **Modern UI**
-  - Swiggy-inspired design
-  - Responsive layout
-  - Clean restaurant cards
+Users can browse restaurants such as:
 
----
+* Dominos
+* KFC
+* McDonald's
+* Subway
+* Local Cafe
 
-## 🧠 Machine Learning Models Used
+### 🤖 Customer Support Chatbot
 
-| Model | Purpose |
-|------|--------|
-| Linear Regression | Predict delivery time |
-| Decision Tree Classifier | Predict delay reason |
-| NLP Model | Chatbot intent classification |
+An AI-powered chatbot that helps users with common delivery issues like:
 
----
+* Order status
+* Refunds
+* Missing items
+* Payment issues
 
-## 🛠 Tech Stack
+### 🌐 Multi-Page Web Application
 
-**Frontend**
-- HTML5
-- CSS3
-- JavaScript (planned)
+The application includes:
 
-**Backend**
-- Python
-- Flask
+* Home page
+* Restaurant pages
+* Delivery prediction page
+* Customer support page
 
-**Machine Learning**
-- Scikit-learn
-- Pandas
-- NumPy
+### 🎨 Modern UI
 
-**Model Storage**
-- Joblib
+* Swiggy-inspired design
+* Clean restaurant cards
+* Simple navigation system
 
 ---
 
-## 📂 Project Structure
+# 🧠 Machine Learning Models
 
+| Model                    | Purpose                   |
+| ------------------------ | ------------------------- |
+| Linear Regression        | Predict delivery time     |
+| Decision Tree Classifier | Predict delay reason      |
+| NLP Intent Model         | Support chatbot responses |
 
-Zwiggy/
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+* HTML5
+* CSS3
+* JavaScript *(planned)*
+
+## Backend
+
+* Python
+* Flask
+
+## Machine Learning
+
+* Scikit-learn
+* Pandas
+* NumPy
+
+## Model Storage
+
+* Joblib
+
+---
+
+# 📂 Project Structure
+
+```
+zwiggy/
 │
 ├── static/
-│ ├── base.css
-│ ├── dominos.css
-│ ├── kfc.css
-│ ├── subway.css
-│ ├── localcafe.css
-│ ├── mcdonalds.svg
-│ ├── subway.svg
+│   ├── base.css
+│   ├── dominos.css
+│   ├── kfc.css
+│   ├── subway.css
+│   ├── localcafe.css
+│   ├── support.css
+│   ├── mcdonalds.svg
+│   ├── subway.svg
 │
 ├── templates/
-│ ├── base.html
-│ ├── index.html
-│ ├── support.html
-│ ├── dominos.html
-│ ├── kfc.html
-│ ├── mcdonald.html
-│ ├── subway.html
-│ ├── localcafe.html
+│   ├── base.html
+│   ├── index.html
+│   ├── support.html
+│   ├── dominos.html
+│   ├── kfc.html
+│   ├── mcdonald.html
+│   ├── subway.html
+│   ├── localcafe.html
 │
 ├── app.py
 ├── predict_time.py
@@ -106,127 +125,89 @@ Zwiggy/
 │
 ├── Requirement.txt
 └── README.md
-
+```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### 1️⃣ Clone the repository
-git clone https://github.com/huzaifalokhandwala0307/ZWIGGY.git 
-cd zwiggy
-2️⃣ Install dependencies
+### 1️⃣ Clone the Repository
+
+```
+git clone https://github.com/huzaifalokhandwala0307/ZWIGGY.git
+cd zwiggy-delivery-prediction
+```
+
+### 2️⃣ Install Dependencies
+
+```
 pip install -r Requirement.txt
-3️⃣ Run the application
+```
+
+### 3️⃣ Run the Flask Application
+
+```
 python app.py
-4️⃣ Open in browser
+```
+
+### 4️⃣ Open in Browser
+
+```
 http://127.0.0.1:5000
-📊 Example Prediction
+```
+
+---
+
+# 📊 Example Prediction
 
 Input parameters:
 
 City: Bangalore
-
 Restaurant: Dominos
-
 Distance: 5 km
-
 Items: 3
-
 Traffic: Medium
-
 Weather: Clear
 
 Output:
 
+```
 Preparation Time: 18 minutes
 Estimated Delivery Time: 42 minutes
 Delay Reason: No Delay
-🔮 Future Improvements
+```
 
-🛒 Add cart and ordering system
+---
 
-📍 Integrate map-based distance calculation
+# 🔮 Future Improvements
 
-📦 Real-time order tracking simulation
+Planned improvements for the project:
 
-💳 Payment integration
+* Add JavaScript interactivity
+* Add cart and order simulation
+* Integrate database (SQLite / PostgreSQL)
+* Add real-time order tracking simulation
+* Improve responsive mobile UI
+* Add restaurant menus and pricing
 
-🗄 Database integration (SQLite / PostgreSQL)
+---
 
-📱 Fully responsive mobile UI
-
-👨‍💻 Author
+# 👨‍💻 Author
 
 Huzaifa
 
 Machine Learning & Web Development Enthusiast
 
-⭐ Project Status
+---
 
-🚧 In Development
-New features such as JavaScript interactivity and database integration will be added soon.
+# ⭐ Project Status
 
-📜 License
+🚧 Active Development
 
-This project is open source and available under the MIT License.
-
+New features such as **JavaScript functionality and database integration** will be added soon.
 
 ---
 
-✅ This README will make your **GitHub project look professional**.
+# 📜 License
 
-If you want, I can also give you a **better GitHub project title + description + tags** so your repo looks even stronger.
-
-This project is open source and available under the **MIT License**.
-
-whats this
-
-That line in the README:
-
-“This project is open source and available under the MIT License.”
-
-means people are allowed to use your project code under certain rules.
-
-📜 What an MIT License Means
-
-The MIT License is a very simple open-source license.
-
-If you publish your project with it, others can:
-
-✅ Use your code
-✅ Modify your code
-✅ Share your code
-✅ Use it in their own projects (even commercial ones)
-
-But they must:
-
-Keep your copyright notice
-
-Mention the MIT license
-
-Example
-
-Someone could take your Zwiggy project, improve it, and build a bigger app from it — but they must still mention you as the original author.
-
-Do you actually need it?
-
-For college / portfolio projects, it's optional.
-
-You have 3 choices:
-
-1️⃣ MIT License (most common for GitHub projects)
-2️⃣ No license – people technically cannot reuse your code
-3️⃣ Private repo – only you see it
-
-If you want to use MIT License
-
-Create a file called:
-
-LICENSE
-
-Then add:
-
-MIT License
-
-Copyright (c) 2026 Huzaifa
+This project is open-source and available under the **MIT License**.
