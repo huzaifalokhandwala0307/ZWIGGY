@@ -101,6 +101,31 @@ def predict():
 @app.route("/support", methods=["GET","POST"])
 def support():
 
+    responses = {
+        "greeting": [
+            "Hello! Welcome to Zwiggy Support.",
+            "Hi! How can I help you today?"
+        ],
+        "order_status": [
+            "You can track your order in the 'My Orders' section.",
+            "Your order should arrive shortly!"
+        ],
+        "refund": [
+            "Refunds usually take 5–7 business days.",
+            "Your refund will return to the original payment method."
+        ],
+        "cancel_order": [
+            "Orders can only be cancelled within 2 minutes after placing."
+        ],
+        "thanks": [
+            "Happy to help!",
+            "Glad I could help!"
+        ],
+        "goodbye": [
+            "Goodbye! Have a great day!"
+        ]
+    }
+
     user_msg = ""
     bot_reply = ""
 
