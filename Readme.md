@@ -194,7 +194,7 @@ Planned improvements for the project:
 
 # 👨‍💻 Author
 
-Huzaifa
+Huzaifa Samirbhai Lokhandwala
 
 Machine Learning & Web Development Enthusiast
 
