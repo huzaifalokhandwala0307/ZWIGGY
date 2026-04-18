@@ -1,213 +1,178 @@
-# 🍔 Zwiggy – Smart Food Delivery Prediction App
+# 🍔 Zwiggy – ML-Powered Food Delivery Web App
 
-Zwiggy is a **Flask-based web application** that predicts food delivery time using **Machine Learning**.
-The application simulates a modern food delivery platform where users can browse restaurants, estimate delivery time, and get assistance through a chatbot.
+Zwiggy is a full-stack food delivery web application inspired by platforms like Swiggy & Zomato, enhanced with a Machine Learning model to predict delivery time dynamically.
 
----
-
-# 🚀 Features
-
-### 🧠 Machine Learning Delivery Prediction
-
-Predict delivery time based on:
-
-* City
-* Restaurant
-* Distance
-* Number of items
-* Traffic level
-* Weather conditions
-* Peak hour
-
-### 🍽 Restaurant Selection
-
-Users can browse restaurants such as:
-
-* Dominos
-* KFC
-* McDonald's
-* Subway
-* Local Cafe
-
-### 🤖 Customer Support Chatbot
-
-An AI-powered chatbot that helps users with common delivery issues like:
-
-* Order status
-* Refunds
-* Missing items
-* Payment issues
-
-### 🌐 Multi-Page Web Application
-
-The application includes:
-
-* Home page
-* Restaurant pages
-* Delivery prediction page
-* Customer support page
-
-### 🎨 Modern UI
-
-* Swiggy-inspired design
-* Clean restaurant cards
-* Simple navigation system
+> 🚀 **A real-world inspired project combining Frontend + Backend + Machine Learning into one system.**
 
 ---
 
-# 🧠 Machine Learning Models
+## 🚀 Live Features
 
-| Model                    | Purpose                   |
-| ------------------------ | ------------------------- |
-| Linear Regression        | Predict delivery time     |
-| Decision Tree Classifier | Predict delay reason      |
-| NLP Intent Model         | Support chatbot responses |
+### 🍽️ Food Ordering UI
+
+* Multiple restaurant pages (McDonald's, Dominos, KFC, Subway)
+* Clean and responsive design
+* Real-world inspired layout
+
+### 🛒 Smart Cart System
+
+* Add items dynamically to cart
+* Increase / decrease quantity
+* Automatic total price calculation
+* Interactive side cart panel
+* “Place Order” functionality
+
+### ⚡ JavaScript Interactivity
+
+* Real-time UI updates
+* Dynamic cart rendering
+* Smooth user experience
+
+### 🧠 ML-Based Delivery Prediction
+
+* Predicts estimated delivery time
+* Based on:
+
+  * Distance
+  * Traffic conditions
+  * Order details
+* Integrated with Flask backend
 
 ---
 
-# 🛠 Tech Stack
+## 🛠️ Tech Stack
 
-## Frontend
+### Frontend
 
 * HTML5
 * CSS3
-* JavaScript *(planned)*
+* JavaScript
 
-## Backend
+### Backend
 
-* Python
-* Flask
+* Python (Flask)
 
-## Machine Learning
+### Machine Learning
 
 * Scikit-learn
 * Pandas
 * NumPy
 
-## Model Storage
-
-* Joblib
-
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
-```
+```bash
 zwiggy/
-│
-├── static/
-│   ├── base.css
+│── static/
 │   ├── dominos.css
 │   ├── kfc.css
 │   ├── subway.css
-│   ├── localcafe.css
-│   ├── support.css
-│   ├── mcdonalds.svg
-│   ├── subway.svg
+│   ├── style.css
+│   ├── main.js
+|   │── main.js   
+|   │── cart.js   
+|   │── base.js   
 │
-├── templates/
-│   ├── base.html
+│── templates/
 │   ├── index.html
-│   ├── support.html
 │   ├── dominos.html
 │   ├── kfc.html
-│   ├── mcdonald.html
 │   ├── subway.html
-│   ├── localcafe.html
+│   ├── mcdonald.html
 │
-├── app.py
-├── predict_time.py
-├── chatbotsupport.py
-│
-├── delivery_time_model.joblib
-├── delay_reason_model.joblib
-├── prep_time_model.joblib
-│
-├── Requirement.txt
-└── README.md
+│── app.py
+│── predict_time.py
+│── delivery_time_model.joblib
+│── requirements.txt
+│── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the Repository
+### 1️⃣ Clone the repository
 
-```
-git clone https://github.com/huzaifalokhandwala0307/ZWIGGY.git
-cd zwiggy-delivery-prediction
-```
-
-### 2️⃣ Install Dependencies
-
-```
-pip install -r Requirement.txt
+```bash
+git clone https://github.com/your-username/zwiggy.git
+cd zwiggy
 ```
 
-### 3️⃣ Run the Flask Application
+### 2️⃣ Install dependencies
 
+```bash
+pip install -r requirements.txt
 ```
+
+### 3️⃣ Run the application
+
+```bash
 python app.py
 ```
 
-### 4️⃣ Open in Browser
+### 4️⃣ Open in browser
 
 ```
-http://127.0.0.1:5000
-```
-
----
-
-# 📊 Example Prediction
-
-Input parameters:
-
-City: Bangalore
-Restaurant: Dominos
-Distance: 5 km
-Items: 3
-Traffic: Medium
-Weather: Clear
-
-Output:
-
-```
-Preparation Time: 18 minutes
-Estimated Delivery Time: 42 minutes
-Delay Reason: No Delay
+http://127.0.0.1:5000/
 ```
 
 ---
 
-# 🔮 Future Improvements
+## 🧠 Machine Learning Details
 
-Planned improvements for the project:
+The delivery time prediction model uses regression techniques to estimate delivery duration.
 
-* Add JavaScript interactivity
-* Add cart and order simulation
-* Integrate database (SQLite / PostgreSQL)
-* Add real-time order tracking simulation
-* Improve responsive mobile UI
-* Add restaurant menus and pricing
+### Features used:
 
----
+* Distance
+* Traffic conditions
+* Preparation time
 
-# 👨‍💻 Author
+### Workflow:
 
-Huzaifa Samirbhai Lokhandwala
-
-Machine Learning & Web Development Enthusiast
+1. Data preprocessing (encoding + scaling)
+2. Model training
+3. Model saved using `.joblib`
+4. Integrated into Flask backend
 
 ---
 
-# ⭐ Project Status
+## 🔥 Future Enhancements
 
-🚧 Active Development
-
-New features such as **JavaScript functionality and database integration** will be added soon.
+* 💾 Save cart using localStorage
+* 📦 Order confirmation page
+* ⏱️ Real-time delivery tracking simulation
+* 🔐 User authentication system
+* ☁️ Deploy to cloud (Render / Vercel)
 
 ---
 
-# 📜 License
+## 🤝 Contributing
 
-This project is open-source and available under the **MIT License**.
+Contributions are welcome!
+Feel free to fork the repository and submit a pull request.
+
+---
+
+## 📬 Contact
+
+* 💼 LinkedIn: https://www.linkedin.com/in/huzaifa-lokhandwalala-ab5b21375
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
+
+---
+
+## 💡 Project Goal
+
+To build a real-world inspired full-stack application that combines:
+
+* Frontend development
+* Backend integration
+* Machine Learning
+
+into a single impactful product.
