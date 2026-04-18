@@ -6,10 +6,15 @@ import random
 app = Flask(__name__)
 
 # ── Load models ──
-model_time = joblib.load("delivery_time_model.joblib")
-model_delay = joblib.load("delay_reason_model.joblib")
-model_prep = joblib.load("prep_time_model.joblib")
-support_model = joblib.load("chatbotsupport.joblib")
+import os
+import joblib
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_time = joblib.load(os.path.join(BASE_DIR, "delivery_time_model.joblib"))
+model_delay = joblib.load(os.path.join(BASE_DIR, "delay_reason_model.joblib"))
+model_prep = joblib.load(os.path.join(BASE_DIR, "prep_time_model.joblib"))
+support_model = joblib.load(os.path.join(BASE_DIR, "chatbotsupport.joblib"))
 
 
 # ─────────────────────────────
