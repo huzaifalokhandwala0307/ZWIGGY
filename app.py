@@ -1,9 +1,27 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify, session, redirect
 import pandas as pd
 import joblib
 import random
+import os
+import datetime
+import firebase_admin
+from firebase_admin import credentials, firestore
 
 app = Flask(__name__)
+app.secret_key = "super_secret_zwiggy_key_123"
+
+# Initialize Firebase Admin
+if not firebase_admin._apps:
+    try:
+        cred = credentials.Certificate(os.environ.get("FIREBASE_CREDENTIALS_PATH", "firebase-key.json"))
+        firebase_admin.initialize_app(cred)
+    except Exception as e:
+        print("Firebase init error:", e)
+
+try:
+    db = firestore.client()
+except:
+    db = None
 
 # ── Load models ──
 import os
@@ -21,20 +39,35 @@ support_model = joblib.load(os.path.join(BASE_DIR, "chatbotsupport.joblib"))
 # HOME PAGE
 # ─────────────────────────────
 @app.route("/")
+def root():
+    return redirect("/login")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/set-user", methods=["POST"])
+def set_user():
+    data = request.json
+    session["user"] = data
+    return {"status": "ok"}
+
 @app.route("/home")
 def home():
-    return render_template("base.html")
+    return render_template("home.html")
+
+@app.route("/cart")
+def cart():
+    return render_template("cart.html")
+
+@app.route("/payment")
+def payment():
+    return render_template("payment.html")
 
 
 # ─────────────────────────────
-# PREDICTION PAGE
 # ─────────────────────────────
-@app.route("/predict-page")
-def predict_page():
-    return render_template("index.html")
 
-
-# ─────────────────────────────
 # RESTAURANT PAGES
 # ─────────────────────────────
 @app.route("/dominos")
@@ -61,43 +94,9 @@ def local_cafe():
 # ─────────────────────────────
 # DELIVERY PREDICTION
 # ─────────────────────────────
-@app.route("/predict", methods=["POST"])
-def predict():
-
-    city = request.form["city"].lower()
-    restaurant = request.form["restaurant"].lower()
-    distance = float(request.form["distance"])
-    items = int(request.form["items"])
-    peak = int(request.form["peak"])
-    traffic = request.form["traffic"].lower()
-    weather = request.form["weather"].lower()
-
-    prep_time = model_prep.predict(
-        pd.DataFrame([[restaurant]], columns=["restaurant"])
-    )
-
-    input1 = pd.DataFrame(
-        [[city, distance, items, peak, traffic, weather, prep_time[0], restaurant]],
-        columns=[
-            "city","distance_km","order_items","is_peak_hour",
-            "traffic_level","weather","prep_time","restaurant"
-        ],
-    )
-
-    input2 = pd.DataFrame(
-        [[city, distance, traffic, weather]],
-        columns=["city","distance_km","traffic_level","weather"]
-    )
-
-    delivery_time = model_time.predict(input1)
-    delay_reason = model_delay.predict(input2)
-
-    return render_template(
-        "index.html",
-        prep=round(prep_time[0],2),
-        time=round(delivery_time[0],2),
-        reason=delay_reason[0]
-    )
+@app.route("/predict", methods=["GET"])
+def predict_page():
+    return render_template("predict.html")
 
 
 # ─────────────────────────────
@@ -152,6 +151,47 @@ def support():
         bot_reply=bot_reply
     )
 
+# ─────────────────────────────
+# FIREBASE & RAZORPAY API
+# ─────────────────────────────
+@app.route("/api/config")
+def api_config():
+    return jsonify({
+        "firebase": {
+            "apiKey": os.environ.get("FIREBASE_API_KEY", ""),
+            "authDomain": os.environ.get("FIREBASE_AUTH_DOMAIN", ""),
+            "projectId": os.environ.get("FIREBASE_PROJECT_ID", ""),
+            "storageBucket": os.environ.get("FIREBASE_STORAGE_BUCKET", ""),
+            "messagingSenderId": os.environ.get("FIREBASE_MESSAGING_SENDER_ID", ""),
+            "appId": os.environ.get("FIREBASE_APP_ID", "")
+        }
+    })
+
+@app.route("/save-user", methods=["POST"])
+def save_user():
+    data = request.json
+    uid = data.get("uid")
+    if uid and db:
+        try:
+            db.collection("users").document(uid).set({
+                "uid": uid,
+                "name": data.get("name"),
+                "email": data.get("email"),
+                "last_login": datetime.datetime.now()
+            }, merge=True)
+            return jsonify({"status": "success"})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+    return jsonify({"error": "Invalid data or DB offline"}), 400
+
+@app.route("/place-order", methods=["POST"])
+def place_order():
+    data = request.json
+    print("ORDER RECEIVED:", data)
+    return {
+        "status": "success",
+        "message": "Order placed successfully"
+    }
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+<!-- Background blobs -->
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<div class="login-container">
+    <div class="login-card">
+
+        <!-- Bouncing scooter -->
+        <span class="scooter">🛵</span>
+
+        <!-- Brand name -->
+        <h2 class="login-logo">Zwiggy</h2>
+
+        <!-- Subtitle -->
+        <p class="login-subtitle">Please log in to continue</p>
+
+        <!-- Divider -->
+        <div class="login-divider">
+            <span>sign in with</span>
+        </div>
+
+        <!-- Google button -->
+        <button id="loginBtn" class="google-btn">
+            <span class="google-icon-wrapper">
+                <img class="google-icon"
+                     src="{{ url_for('static', filename='google-icon-logo-svgrepo-com.svg') }}"
+                     alt="Google logo"/>
+            </span>
+            Sign in with Google
+        </button>
+
+        <!-- Terms -->
+        <p class="login-terms">
+            By signing in you agree to our
+            <a href="#">Terms of Service</a> &amp;
+            <a href="#">Privacy Policy</a>
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}

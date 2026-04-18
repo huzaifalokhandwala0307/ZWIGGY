@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zwiggy — Support</title>
-    <link rel="stylesheet" href="/static/support.css">
-</head>
-<body>
+{% extends "base.html" %}
 
-    <!-- ── Navbar ── -->
-    <nav class="navbar">
-        <a href="base.html" class="navbar-brand">Zwiggy</a>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/support">Support</a></li>
-            <li><a href="/predict-page" >Predict Delivery Time</a></li>
-        </ul>
-    </nav>
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='support.css') }}">
+{% endblock %}
+
+{% block content %}
+
 
     <!-- ── Support Header ── -->
     <header class="supporthead">
@@ -87,12 +76,5 @@
         </div>
     </section>
 
-    <!-- ── Footer ── -->
-    <footer class="footer">
-        <p>© 2025 Zwiggy. All rights reserved.</p>
-    </footer>
-
-    <script src="/static/main.js"></script>
-    <script src="/static/support.js"></script>
-</body>
-</html>
+    
+{% endblock %}

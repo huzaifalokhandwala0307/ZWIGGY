@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- ── Hero / Welcome ── -->
+    <header class="hero">
+        <p class="welcome">Welcome to</p>
+        <h1 class="brand-name">Zwiggy</h1>
+        <p class="hero-sub">Order from your favourite restaurants, delivered fast.</p>
+    </header>
+
+    <!-- ── Restaurant Listing ── -->
+    <main class="orderpage">
+        <h2 class="section-title">Choose Your Restaurant</h2>
+
+        <div class="restaurant-gallery">
+
+            <a href="/dominos" class="restaurant-card">
+                <div class="card-img-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Dominos_pizza_logo.svg" alt="Dominos logo">
+                </div>
+                <p class="card-name">Dominos</p>
+                <span class="card-tag">Pizza · Fast Food</span>
+            </a>
+
+            <a href="/kfc" class="restaurant-card">
+                <div class="card-img-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/KFC_logo.svg" alt="KFC logo">
+                </div>
+                <p class="card-name">KFC</p>
+                <span class="card-tag">Chicken · Fast Food</span>
+            </a>
+
+            <a href="/mcdonalds" class="restaurant-card">
+                <div class="card-img-wrap">
+                   <img src="{{ url_for('static', filename='mcdonalds.svg') }}">
+                </div>
+                <p class="card-name">McDonald's</p>
+                <span class="card-tag">Burgers · Fast Food</span>
+            </a>
+
+            <a href="/subway" class="restaurant-card">
+                <div class="card-img-wrap">
+                    <img src="{{ url_for('static', filename='subway.svg') }}">
+                </div>
+                <p class="card-name">Subway</p>
+                <span class="card-tag">Sandwiches · Healthy</span>
+            </a>
+
+            <a href="/localcafe" class="restaurant-card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Local Cafe">
+                </div>
+                <p class="card-name">Local Cafe</p>
+                <span class="card-tag">Cafe · Beverages</span>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- ── Our Services ── -->
+    <section class="ourservices">
+        <h2 class="section-title">Our Services</h2>
+        <ul class="services-list">
+            <li class="service-item">
+                <a href="/home">
+                    <span class="service-icon">🛵</span>
+                    <p>Delivery App</p>
+                </a>
+            </li>
+            <li class="service-item">
+                <a href="/support">
+                    <span class="service-icon">🎧</span>
+                    <p>Customer Support</p>
+                </a>
+            </li>
+            <li class="service-item">
+                <a href="/predict">
+                    <span class="service-icon">⏱️</span>
+                    <p>Predict Delivery Time</p>
+                </a>
+            </li>
+        </ul>
+    </section>
+{% endblock %}

@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zwiggy — Choose Your Restaurant</title>
-    <link rel="stylesheet" href="/static/base.css">
+    <title>Zwiggy</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
 
@@ -12,99 +16,32 @@
     <nav class="navbar">
         <a href="/" class="navbar-brand">Zwiggy</a>
         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/predict-page">Predict Time</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/predict">Predict Time</a></li>
             <li><a href="/support">Support</a></li>
+            <li>
+                <span id="userNameDisplay" style="display:none; color:#FC8019; font-weight:bold; margin-right:10px;"></span>
+                <a href="#" id="loginBtn" onclick="loginWithGoogle()">Login</a>
+                <a href="#" id="logoutBtn" onclick="logout()" style="display:none;">Logout</a>
+            </li>
         </ul>
     </nav>
 
-    <!-- ── Hero / Welcome ── -->
-    <header class="hero">
-        <p class="welcome">Welcome to</p>
-        <h1 class="brand-name">Zwiggy</h1>
-        <p class="hero-sub">Order from your favourite restaurants, delivered fast.</p>
-    </header>
+    
+{% block content %}{% endblock %}
 
-    <!-- ── Restaurant Listing ── -->
-    <main class="orderpage">
-        <h2 class="section-title">Choose Your Restaurant</h2>
-
-        <div class="restaurant-gallery">
-
-            <a href="/dominos" class="restaurant-card">
-                <div class="card-img-wrap">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Dominos_pizza_logo.svg" alt="Dominos logo">
-                </div>
-                <p class="card-name">Dominos</p>
-                <span class="card-tag">Pizza · Fast Food</span>
-            </a>
-
-            <a href="/kfc" class="restaurant-card">
-                <div class="card-img-wrap">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/KFC_logo.svg" alt="KFC logo">
-                </div>
-                <p class="card-name">KFC</p>
-                <span class="card-tag">Chicken · Fast Food</span>
-            </a>
-
-            <a href="/mcdonalds" class="restaurant-card">
-                <div class="card-img-wrap">
-                   <img src="{{ url_for('static', filename='mcdonalds.svg') }}">
-                </div>
-                <p class="card-name">McDonald's</p>
-                <span class="card-tag">Burgers · Fast Food</span>
-            </a>
-
-            <a href="/subway" class="restaurant-card">
-                <div class="card-img-wrap">
-                    <img src="{{ url_for('static', filename='subway.svg') }}">
-                </div>
-                <p class="card-name">Subway</p>
-                <span class="card-tag">Sandwiches · Healthy</span>
-            </a>
-
-            <a href="/localcafe" class="restaurant-card">
-                <div class="card-img-wrap">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Local Cafe">
-                </div>
-                <p class="card-name">Local Cafe</p>
-                <span class="card-tag">Cafe · Beverages</span>
-            </a>
-
-        </div>
-    </main>
-
-    <!-- ── Our Services ── -->
-    <section class="ourservices">
-        <h2 class="section-title">Our Services</h2>
-        <ul class="services-list">
-            <li class="service-item">
-                <a href="/">
-                    <span class="service-icon">🛵</span>
-                    <p>Delivery App</p>
-                </a>
-            </li>
-            <li class="service-item">
-                <a href="/support">
-                    <span class="service-icon">🎧</span>
-                    <p>Customer Support</p>
-                </a>
-            </li>
-            <li class="service-item">
-                <a href="/predict-page">
-                    <span class="service-icon">⏱️</span>
-                    <p>Predict Delivery Time</p>
-                </a>
-            </li>
-        </ul>
-    </section>
-
-    <!-- ── Footer ── -->
+<!-- ── Footer ── -->
     <footer class="footer">
         <p>© 2025 Zwiggy. All rights reserved.</p>
     </footer>
 
-    <script src="/static/main.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='cart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/payment.js') }}"></script>
     <script src="/static/base.js"></script>
 </body>
 </html>

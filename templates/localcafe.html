@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zwiggy — Local Cafe</title>
-    <link rel="stylesheet" href="/static/localcafe.css">
-</head>
-<body>
+{% extends "base.html" %}
 
-    <!-- ── Navbar ── -->
-    <nav class="navbar">
-        <a href="/" class="navbar-brand">Zwiggy</a>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/predict-page">Predict Time</a></li>
-            <li><a href="/support">Support</a></li>
-        </ul>
-    </nav>
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='localcafe.css') }}">
+{% endblock %}
+
+{% block content %}
+<div style="text-align: right; padding: 20px 40px 0;"><button onclick="goToCart()" class="cart-btn" style="background: #FC8019; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(252, 128, 25, 0.2);">🛒 View Cart</button></div>
+
+
 
     <!-- ── Restaurant Header ── -->
     <header class="restaurant-head">
@@ -42,9 +33,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Masala Chai" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Masala Chai</p>
-                        <p class="menu-desc">Classic spiced tea brewed with ginger, cardamom & tulsi</p>
-                        <p class="menu-price">₹39</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Classic spiced tea brewed with ginger, cardamom & tulsi</p>
+<p class="menu-price">₹39</p>
+                        <button class="add-btn" onclick="addToCart('Masala Chai', 39)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -52,9 +43,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Filter Coffee" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Filter Coffee</p>
-                        <p class="menu-desc">South Indian style strong filter coffee with frothy milk</p>
-                        <p class="menu-price">₹49</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">South Indian style strong filter coffee with frothy milk</p>
+<p class="menu-price">₹49</p>
+                        <button class="add-btn" onclick="addToCart('Filter Coffee', 49)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -62,9 +53,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Cappuccino" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Cappuccino</p>
-                        <p class="menu-desc">Espresso with steamed milk foam & a dusting of cocoa</p>
-                        <p class="menu-price">₹99</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Espresso with steamed milk foam & a dusting of cocoa</p>
+<p class="menu-price">₹99</p>
+                        <button class="add-btn" onclick="addToCart('Cappuccino', 99)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -72,9 +63,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Latte" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Cafe Latte</p>
-                        <p class="menu-desc">Smooth espresso with velvety steamed milk</p>
-                        <p class="menu-price">₹109</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Smooth espresso with velvety steamed milk</p>
+<p class="menu-price">₹109</p>
+                        <button class="add-btn" onclick="addToCart('Cafe Latte', 109)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -82,9 +73,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Hot Chocolate" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Hot Chocolate</p>
-                        <p class="menu-desc">Rich dark cocoa with steamed milk & marshmallows</p>
-                        <p class="menu-price">₹119</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Rich dark cocoa with steamed milk & marshmallows</p>
+<p class="menu-price">₹119</p>
+                        <button class="add-btn" onclick="addToCart('Hot Chocolate', 119)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -92,9 +83,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Green Tea" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Green Tea</p>
-                        <p class="menu-desc">Refreshing green tea with honey & lemon</p>
-                        <p class="menu-price">₹59</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Refreshing green tea with honey & lemon</p>
+<p class="menu-price">₹59</p>
+                        <button class="add-btn" onclick="addToCart('Green Tea', 59)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -110,9 +101,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Cold Coffee" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Cold Coffee</p>
-                        <p class="menu-desc">Chilled blended coffee with ice cream & milk</p>
-                        <p class="menu-price">₹129</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Chilled blended coffee with ice cream & milk</p>
+<p class="menu-price">₹129</p>
+                        <button class="add-btn" onclick="addToCart('Cold Coffee', 129)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -120,9 +111,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Mango Lassi" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Mango Lassi</p>
-                        <p class="menu-desc">Thick creamy mango lassi with a pinch of cardamom</p>
-                        <p class="menu-price">₹99</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Thick creamy mango lassi with a pinch of cardamom</p>
+<p class="menu-price">₹99</p>
+                        <button class="add-btn" onclick="addToCart('Mango Lassi', 99)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -130,9 +121,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Lemonade" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Fresh Lemonade</p>
-                        <p class="menu-desc">Freshly squeezed lemon with mint & black salt</p>
-                        <p class="menu-price">₹59</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Freshly squeezed lemon with mint & black salt</p>
+<p class="menu-price">₹59</p>
+                        <button class="add-btn" onclick="addToCart('Fresh Lemonade', 59)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -140,9 +131,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Iced Tea" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Iced Lemon Tea</p>
-                        <p class="menu-desc">Chilled lemon tea with ice cubes & fresh mint leaves</p>
-                        <p class="menu-price">₹79</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Chilled lemon tea with ice cubes & fresh mint leaves</p>
+<p class="menu-price">₹79</p>
+                        <button class="add-btn" onclick="addToCart('Iced Lemon Tea', 79)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -150,9 +141,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Oreo Shake" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Oreo Shake</p>
-                        <p class="menu-desc">Thick blended milkshake with crushed Oreo & cream</p>
-                        <p class="menu-price">₹149</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Thick blended milkshake with crushed Oreo & cream</p>
+<p class="menu-price">₹149</p>
+                        <button class="add-btn" onclick="addToCart('Oreo Shake', 149)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -160,9 +151,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2738/2738749.png" alt="Rose Milk" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Rose Milk</p>
-                        <p class="menu-desc">Chilled rose syrup milk with basil seeds</p>
-                        <p class="menu-price">₹69</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Chilled rose syrup milk with basil seeds</p>
+<p class="menu-price">₹69</p>
+                        <button class="add-btn" onclick="addToCart('Rose Milk', 69)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -178,9 +169,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Veg Sandwich" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Veg Grilled Sandwich</p>
-                        <p class="menu-desc">Toasted sandwich with cheese, veggies & green chutney</p>
-                        <p class="menu-price">₹99</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Toasted sandwich with cheese, veggies & green chutney</p>
+<p class="menu-price">₹99</p>
+                        <button class="add-btn" onclick="addToCart('Veg Grilled Sandwich', 99)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -188,9 +179,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Club Sandwich" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Club Sandwich</p>
-                        <p class="menu-desc">Triple decker with chicken, egg, cheese & mayo</p>
-                        <p class="menu-price">₹149</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Triple decker with chicken, egg, cheese & mayo</p>
+<p class="menu-price">₹149</p>
+                        <button class="add-btn" onclick="addToCart('Club Sandwich', 149)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -198,9 +189,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Samosa" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Samosa (2 pcs)</p>
-                        <p class="menu-desc">Crispy fried samosas with spiced potato filling & chutney</p>
-                        <p class="menu-price">₹49</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Crispy fried samosas with spiced potato filling & chutney</p>
+<p class="menu-price">₹49</p>
+                        <button class="add-btn" onclick="addToCart('Samosa (2 pcs)', 49)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -208,9 +199,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Vada Pav" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Vada Pav</p>
-                        <p class="menu-desc">Mumbai street style vada pav with spicy garlic chutney</p>
-                        <p class="menu-price">₹39</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Mumbai street style vada pav with spicy garlic chutney</p>
+<p class="menu-price">₹39</p>
+                        <button class="add-btn" onclick="addToCart('Vada Pav', 39)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -218,9 +209,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Maggi" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Masala Maggi</p>
-                        <p class="menu-desc">Classic Maggi noodles tossed with veggies & extra masala</p>
-                        <p class="menu-price">₹69</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Classic Maggi noodles tossed with veggies & extra masala</p>
+<p class="menu-price">₹69</p>
+                        <button class="add-btn" onclick="addToCart('Masala Maggi', 69)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -228,9 +219,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" alt="Butter Toast" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Butter Toast</p>
-                        <p class="menu-desc">Thick sliced bread toasted golden with salted butter</p>
-                        <p class="menu-price">₹49</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Thick sliced bread toasted golden with salted butter</p>
+<p class="menu-price">₹49</p>
+                        <button class="add-btn" onclick="addToCart('Butter Toast', 49)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -246,9 +237,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/938/938063.png" alt="Chocolate Brownie" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Chocolate Brownie</p>
-                        <p class="menu-desc">Warm fudgy brownie with a scoop of vanilla ice cream</p>
-                        <p class="menu-price">₹119</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Warm fudgy brownie with a scoop of vanilla ice cream</p>
+<p class="menu-price">₹119</p>
+                        <button class="add-btn" onclick="addToCart('Chocolate Brownie', 119)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -256,9 +247,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/938/938063.png" alt="Gulab Jamun" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Gulab Jamun (2 pcs)</p>
-                        <p class="menu-desc">Soft milk khoya dumplings soaked in rose sugar syrup</p>
-                        <p class="menu-price">₹69</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Soft milk khoya dumplings soaked in rose sugar syrup</p>
+<p class="menu-price">₹69</p>
+                        <button class="add-btn" onclick="addToCart('Gulab Jamun (2 pcs)', 69)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -266,9 +257,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/938/938063.png" alt="Muffin" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Blueberry Muffin</p>
-                        <p class="menu-desc">Freshly baked muffin bursting with blueberries</p>
-                        <p class="menu-price">₹89</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Freshly baked muffin bursting with blueberries</p>
+<p class="menu-price">₹89</p>
+                        <button class="add-btn" onclick="addToCart('Blueberry Muffin', 89)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -276,9 +267,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/938/938063.png" alt="Kulfi" class="menu-img">
                     <div class="menu-info">
                         <p class="menu-name">Matka Kulfi</p>
-                        <p class="menu-desc">Traditional creamy kulfi with pistachios & saffron</p>
-                        <p class="menu-price">₹79</p>
-                        <button class="add-btn">Add +</button>
+<p class="menu-desc">Traditional creamy kulfi with pistachios & saffron</p>
+<p class="menu-price">₹79</p>
+                        <button class="add-btn" onclick="addToCart('Matka Kulfi', 79)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -287,13 +278,5 @@
 
     </main>
 
-    <!-- ── Footer ── -->
-    <footer class="footer">
-        <p>© 2025 Zwiggy. All rights reserved.</p>
-    </footer>
-
-    <script src="/static/main.js"></script>
-    <script src="/static/cart.js"></script>
-
-</body>
-</html>
+    
+{% endblock %}

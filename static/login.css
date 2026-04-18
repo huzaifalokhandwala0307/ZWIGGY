@@ -1,0 +1,326 @@
+/* ================================
+   ZWIGGY — LOGIN PAGE
+   Brand: Orange & White
+   Fonts: Syne + Nunito
+   ================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+/* ── Variables ── */
+:root {
+  --orange:       #FC8019;
+  --orange-dark:  #E16A0E;
+  --orange-deep:  #E84A0A;
+  --orange-light: #FFF3E8;
+  --white:        #FFFFFF;
+  --off-white:    #FFF8F3;
+  --text-primary: #1C1C1C;
+  --text-muted:   #A0A0A0;
+  --border:       #F0E4D9;
+  --transition:   0.24s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--off-white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Full page orange gradient background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #FC8019 0%, #F4531C 52%, #E84A0A 100%);
+  z-index: 0;
+}
+
+/* ── Noise texture overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Floating blobs ── */
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================================
+   LOGIN CONTAINER
+   ================================ */
+.login-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ================================
+   LOGIN CARD — GLASS
+   ================================ */
+.login-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.92);
+  border-radius: 32px;
+  padding: 52px 44px 44px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(252, 128, 25, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  animation: cardFloat 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer stripe */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.95) 40%,
+    rgba(255,255,255,0.95) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Orange glow orb bottom right */
+.login-card::after {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(252,128,25,0.07) 0%, transparent 70%);
+  bottom: -60px; right: -50px;
+  pointer-events: none;
+}
+
+@keyframes cardFloat {
+  from { opacity: 0; transform: translateY(36px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Scooter emoji above logo ── */
+.login-card .scooter {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  animation: scooterBob 2.2s ease-in-out infinite;
+}
+
+@keyframes scooterBob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* ── Logo ── */
+.login-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: -1.5px;
+  line-height: 1;
+  margin-bottom: 8px;
+  animation: slideDown 0.7s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+  cursor: default;
+  transition: letter-spacing 0.3s ease;
+}
+
+.login-logo:hover { letter-spacing: 0px; }
+
+/* Animated underline */
+.login-logo::after {
+  content: '';
+  display: block;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--orange);
+  margin: 8px auto 0;
+  opacity: 0.3;
+  animation: lineGrow 0.8s 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes lineGrow {
+  from { width: 0; }
+  to   { width: 56px; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Subtitle ── */
+.login-subtitle {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  letter-spacing: 0.2px;
+  animation: fadeIn 0.7s 0.3s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Divider ── */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.7s 0.4s both;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1.5px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.login-divider span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── Google Button ── */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: border-color var(--transition), box-shadow var(--transition),
+              transform var(--transition), background var(--transition);
+  animation: fadeIn 0.7s 0.5s both;
+  position: relative;
+  z-index: 1;
+}
+
+.google-btn:hover {
+  border-color: rgba(252, 128, 25, 0.4);
+  box-shadow: 0 6px 20px rgba(252, 128, 25, 0.18);
+  transform: translateY(-2px);
+  background: var(--off-white);
+}
+
+.google-btn:active { transform: translateY(0); }
+
+.google-icon-wrapper {
+  width: 22px; height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.google-icon {
+  width: 20px; height: 20px;
+  object-fit: contain;
+}
+
+/* ── Terms text ── */
+.login-terms {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  line-height: 1.6;
+  animation: fadeIn 0.7s 0.65s both;
+}
+
+.login-terms a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity var(--transition);
+}
+
+.login-terms a:hover { opacity: 0.75; }
+
+/* ================================
+   BACKGROUND BLOBS (injected by JS
+   or add manually as divs)
+   ================================ */
+.blob-1 {
+  width: 480px; height: 480px;
+  top: -160px; right: -120px;
+  animation: blobFloat 7s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 260px; height: 260px;
+  bottom: -80px; left: -60px;
+  animation: blobFloat 9s ease-in-out infinite reverse;
+}
+
+.blob-3 {
+  width: 120px; height: 120px;
+  top: 40%; left: 12%;
+  animation: blobFloat 5s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-22px) scale(1.04); }
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 40px 28px 36px;
+    border-radius: 24px;
+  }
+  .login-logo { font-size: 2.2rem; }
+}

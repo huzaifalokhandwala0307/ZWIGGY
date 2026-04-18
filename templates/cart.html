@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cart.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <!-- ── Navbar ── -->
+    <!-- <nav class="navbar">
+        <a href="/" class="navbar-brand">Zwiggy</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict-page">Predict Time</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- ── Cart Header ── -->
+    <header class="cart-head">
+        <p class="cart-label">Your Order</p>
+        <h1 class="cart-title">Your Cart 🛒</h1>
+        <p class="cart-sub">Review your items before placing the order.</p>
+    </header>
+
+    <!-- ── Cart Wrapper ── -->
+    <main class="cart-wrapper">
+
+        <!-- Cart Items -->
+        <div class="cart-glass">
+
+            <!-- Shimmer top -->
+            <div class="cart-shimmer"></div>
+
+            <!-- Empty state (shown by JS if cart is empty) -->
+            <div class="cart-empty" id="cartEmpty">
+                <span class="empty-icon">🛒</span>
+                <p class="empty-title">Your cart is empty</p>
+                <p class="empty-sub">Go back and add some items!</p>
+                <a href="/" class="back-btn">Browse Restaurants →</a>
+            </div>
+
+            <!-- Items list (filled by JS) -->
+            <div id="cartItems" class="cart-items-list"></div>
+
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary" id="orderSummary">
+
+            <h2 class="summary-title">Order Summary</h2>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">₹0</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Delivery Fee</span>
+                <span id="deliveryFee">₹29</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Taxes & Charges</span>
+                <span id="taxes">₹0</span>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row summary-total">
+                <span>Total</span>
+                <span id="total">₹0</span>
+            </div>
+
+            <button class="place-order-btn" onclick="placeOrder()">
+                Place Order 🛵
+            </button>
+
+            <a href="/" class="continue-btn">+ Add More Items</a>
+
+        </div>
+
+    </main>
+
+    <!-- ── Footer ── -->
+    <!-- <footer class="footer">
+        <p>© 2025 Zwiggy. All rights reserved.</p>
+    </footer> -->
+
+    <script src="/static/main.js"></script>
+    <script src="/static/cartpage.js"></script>
+
+{% endblock %}
